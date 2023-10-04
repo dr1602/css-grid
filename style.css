@@ -1,0 +1,159 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    /* no hay import porque roboto la cargan por defecto los navegadores */
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* ni margin ni arriba ni abajo, y a los lados, lo suficiente para estar centrado */
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 3fr minmax(3vh, 2fr);
+    border-radius: 12px;
+    max-height: 400px;
+    grid-auto-rows: 400px;
+    border-bottom: 1px solid grey;
+    background-color: aquamarine;
+}
+
+.hero-image {
+    width: 100%;
+    object-fit: contain;
+    /* que la imagen se ajuste al espacio que esta ocupando */
+    align-self: center;
+    border-radius: 12px;
+    /* background-color: black ; */
+    order: 1;
+}
+
+.info {
+    color: gray;
+    align-self: center;
+    order: 2;
+}
+
+.info-title {
+    color: white;
+    background-color: #22437d;
+    border-radius: 12px;
+    padding: 1.5vh;
+    font-size: 6vh;
+    font-weight: bolder;
+    margin: 1.2vh;
+}
+
+.info-subtitle {
+    color: white;
+    background-color: #61c0bc;
+    font-size: 3vh;
+    border-radius: 12px;
+    padding: 1.5vh;
+    margin: 1.2vh; 
+}
+
+.info-button {
+    border: none;
+    border-radius: 12px;
+    color: aliceblue;
+    background-color: #03045e;
+    font-weight: bolder;
+    padding: 1.5vh;
+    margin-left: 1.2vh;
+}
+
+.species {
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+
+.species-title {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    font-size: 6vh;
+}
+
+.species-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9vh, 60vh));
+    grid-auto-rows: 1fr;
+    gap: 3vh;
+    margin: 1.2vh;
+    justify-content: center;
+}
+
+.species-item {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    /* cubrir toda la celda en el que esta pintado */
+}
+
+.species-item__big {
+    grid-area: 1 / 1 / 3 / 3;
+}
+
+.trips {
+    margin-top: 3vh;
+    border-radius: 12px;
+    padding: 3vh;
+    max-height: 101vh;
+    grid-auto-rows: 400px;
+    border-bottom: 1px solid grey;
+    background-color: aquamarine;
+}
+
+.trips-tittle {
+    color: white;
+    background-color: #22437d;
+    border-radius: 12px;
+    padding: 1.5vh;
+    font-size: 6vh;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.trips-grid {
+    display: grid;
+    gap: 1.2vh;
+    justify-content: center;
+    grid-template-columns: repeat(3, minmax(9vh, 60vh));
+}
+
+.trips-grid-item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        grid-template-columns: minmax(9vh, 60vh);
+        justify-content: center;
+    }
+    .hero-image{
+        display: none;
+    }
+    .info-title {
+        font-size: 5.4vh;
+    }
+    .species-title {
+        font-size: 5.4vh;
+    }
+    .trips-title {
+        font-size: 5.4vh;
+    }
+    .species-grid {
+        grid-template-columns: repeat(auto-fit, minmax(3vh, 30vh));
+    }
+    .trips-grid {
+        grid-template-columns: repeat(auto-fit, minmax(3vh, 30vh));
+    }
+    .trips {
+        max-height: none;
+    }
+}
